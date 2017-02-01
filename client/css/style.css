@@ -1,0 +1,37 @@
+.note-content{
+    margin-top:10px;
+}
+
+.show-note button{
+    float: right;
+    margin-left: 10px;
+    margin-top: -5px;
+}
+
+.show-note .alert-info{
+    margin-top: 10px;
+}
+
+.count-list{
+}
+
+.shared-text
+{
+    font-size: 11px;
+    background-color: orange;
+    color: white;
+    padding: 3px;
+    position: absolute;
+    right: 10px;
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        background-color: lightblue;
+    }
+
+    .show-note button{
+        float: none;
+        margin-top: 10px;
+    }
+}
