@@ -1,24 +1,24 @@
-import React from 'react';
+import React from 'react'
 
 export default class ShowNote extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            title: this.props.selectedNotem.title,
-            content: this.props.selectedNotem.content
-        };
+  constructor (props) {
+    super(props)
+    this.state = {
+      title: this.props.selectedNotem.title,
+      content: this.props.selectedNotem.content
     }
+  }
 
-    deleteNote() {
-        Meteor.call("deleteNote", this.props.selectedNotem._id);
-    }
+  deleteNote () {
+    Meteor.call('deleteNote', this.props.selectedNotem._id)
+  }
 
-    updateNote() {
-        Meteor.call("updateNote", this.props.selectedNote1);
-    }
+  updateNote () {
+    Meteor.call('updateNote', this.props.selectedNote1)
+  }
 
-    render() {
-        return (
+  render () {
+    return (
             <div className="show-note">
 
                 <input className="form-control"
@@ -32,7 +32,6 @@ export default class ShowNote extends React.Component {
                     <textarea className="form-control note-content"
                               placeholder="content" rows="15"
                               value={this.props.selectedNote1.content}
-                              readonly={true}
                               onChange={this.props.contentChange.bind(this)}>
                     </textarea>
 
@@ -54,6 +53,5 @@ export default class ShowNote extends React.Component {
                 </div>
             </div>
         )
-
-    }
+  }
 }
