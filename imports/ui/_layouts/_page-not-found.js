@@ -6,7 +6,7 @@ export const PageNotFound = () => (
     <div className="content">
       <h1>Page Not Found</h1>
       <br/>
-      <a href="http://app.plutio.com" className="link"><span>Go back</span></a>
+      <a href="/" className="link"><span>Go back</span></a>
     </div>
   </div>
 
