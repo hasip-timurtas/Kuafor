@@ -46,15 +46,31 @@ export class CreateNote extends Component {
   render () {
     const { user, notes } = this.props
     return (
-        <div>
-          <AutoForm className="form" schema={ noteSchema } onSubmit={ doc => this.handleCreateNote(doc) }>
-            <div className="fieldsets">
-              <TextField name="title" placeholder="Title" />
-              <TextField name="content" placeholder="Content" />
-            </div>
-            <SubmitField className="submit button">Create</SubmitField>
-          </AutoForm>
-        </div>
+      <AutoForm className="new-note" schema={ noteSchema } onSubmit={ doc => this.handleCreateNote(doc) }>
+                <div className="row">
+                    <div className="=form-group">
+                        <div className="col-md-6">
+                              <TextField className="form-control" name="title" placeholder="Title" />
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div className="row">
+                    <div className="=form-group">
+                        <div className="col-md-6">
+                            <TextField className="form-control" name="content" placeholder="Content" />
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div className="row">
+                    <div className="=form-group">
+                        <div className="col-md-6">
+                            <button type="submit" className="btn btn-default add-post">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </AutoForm>
       )
   }
 }

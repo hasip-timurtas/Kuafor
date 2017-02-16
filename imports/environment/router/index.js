@@ -25,6 +25,14 @@ import { AlertOverride } from '/imports/ui/_components/generic'
 import { syncHistoryWithStore } from 'react-router-redux'
 
 import LayoutManager from './_layout-manager'
+import {
+  Signup,
+  ResetPassword,
+  VerifyPasswordReset,
+  VerifyEmailAddress,
+  Login
+} from '/imports/ui/pages/accounts'
+
 
 // Create an enhanced history that syncs navigation events with the store
 const history = syncHistoryWithStore(browserHistory, store,)
@@ -41,9 +49,14 @@ Meteor.startup(() => {
 
           <Route path="/" onEnter={clearAlerts} component={LayoutManager}>
 
-            <IndexRedirect to="notes" />
+            <Route path="signup" component={ Signup } />
+            <Route path="reset-password" component={ ResetPassword } />
+            <Route path="verify-password-reset/:token" component={ VerifyPasswordReset } />
+            <Route path="verify-email-address/:token" component={ VerifyEmailAddress } />
 
+            <IndexRedirect to="notes" />
             <Route component={ MainLayout }>
+
               <Route path="notes" >
                 <IndexRoute component={ ListNotes } />
                 <Route path="create-note" component={ CreateNote } />
