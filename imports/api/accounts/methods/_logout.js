@@ -1,13 +1,13 @@
 import { browserHistory } from 'react-router'
 import { Meteor } from 'meteor/meteor'
-// import cookie from 'cookie-dough'
+import cookie from 'cookie-dough'
 
 export const logOut = () => {
   Meteor.logout(() => {
-  /*  cookie().set('COOKIE_NAME', '', {
+    cookie().set("kuafor", '', {
       path: '/',
       expires: new Date(0)
-    })*/
+    })
     browserHistory.push('/')
   })
 }

@@ -4,6 +4,6 @@ export const initialState = {
       user: undefined
     },
     siteLoading: true,
-    notes: []
+    clientServices: []
   }
 }

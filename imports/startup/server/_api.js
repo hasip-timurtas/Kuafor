@@ -1,3 +1,7 @@
-import '/imports/api/notes/model'
-import '/imports/api/notes/server'
-import '/imports/api/notes/methods'
+import '/imports/api/accounts/model';
+import '/imports/api/accounts/server';
+import '/imports/api/accounts/methods';
+
+import '/imports/api/clientServices/model'
+import '/imports/api/clientServices/server'
+import '/imports/api/clientServices/methods'

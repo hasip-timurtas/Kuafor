@@ -1,4 +1,5 @@
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
+//import DataTrack from '/imports/api/dataTrack'
 
 export const deleteAccount = new ValidatedMethod({
 
@@ -17,6 +18,9 @@ export const deleteAccount = new ValidatedMethod({
       return deleteAccount({userId}); // returns 'OK'
 
     }
+
+    //DataTrack.track('removed_account');
+
     return 'OK';
 
   },

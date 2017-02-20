@@ -5,10 +5,10 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema'
 import { AutoForm } from 'uniforms-unstyled'
 import { HiddenField, TextField, SubmitField } from '/imports/ui/_components/uniforms'
 import Alert from 'react-s-alert'
-import { CreateNewNote } from '/imports/api/notes/methods'
+import { CreateNewClientService } from '/imports/api/clientServices/methods'
 
 
-export const noteSchema = new SimpleSchema({
+export const clientServiceSchema = new SimpleSchema({
   title: {
     type: String,
     max: 256
@@ -24,29 +24,28 @@ export const noteSchema = new SimpleSchema({
   }
 })
 
-export class CreateNote extends Component {
+export class CreateClientService extends Component {
 
   static propTypes = {
-    notes: PropTypes.array.isRequired,
     user: PropTypes.object
   }
 
-  handleCreateNote (doc) {
-    noteSchema.clean(doc)
+  handleCreateClientService (doc) {
+    clientServiceSchema.clean(doc)
 
-    CreateNewNote.call(doc, (error, result) => {
+    CreateNewClientService.call(doc, (error, result) => {
       if (error) {
         Alert.error(`Hatay verdi.`)
       } else if (result === 'OK') {
-        Alert.error(`Note başarıyla kaydedildi`)
+        Alert.error(`ClientService başarıyla kaydedildi`)
       }
     })
   }
 
   render () {
-    const { user, notes } = this.props
+    const { user } = this.props
     return (
-      <AutoForm className="new-note" schema={ noteSchema } onSubmit={ doc => this.handleCreateNote(doc) }>
+      <AutoForm className="new-clientService" schema={ clientServiceSchema } onSubmit={ doc => this.handleCreateClientService(doc) }>
                 <div className="row">
                     <div className="=form-group">
                         <div className="col-md-6">
@@ -76,8 +75,8 @@ export class CreateNote extends Component {
 }
 
 export default connect(
-  ({ globalData: { notes, currentUser: { user } } }) => ({
-    notes,
+  ({ globalData: { clientServices, currentUser: { user } } }) => ({
+    clientServices,
     user
   })
-)(CreateNote)
+)(CreateClientService)

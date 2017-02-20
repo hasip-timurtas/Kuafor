@@ -14,11 +14,11 @@ export const MainMenu = () => {
                               <span className="icon-bar"></span>
                               <span className="icon-bar"></span>
                           </button>
-                          <Link className="navbar-brand" to="/">MHT Note</Link>
+                          <Link className="navbar-brand" to="/">MHT ClientService</Link>
                       </div>
                       <div id="navbar" className="navbar-collapse collapse">
                           <ul className="nav navbar-nav">
-                              <li><Link to="/notes/create-note">New Note</Link></li>
+                              <li><Link to="/clientServices/create-clientService">New ClientService</Link></li>
                           </ul>
                       </div>
                   </div>

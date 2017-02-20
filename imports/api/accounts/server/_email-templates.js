@@ -1,12 +1,9 @@
 import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
-import { SETTING_PRIVATE } from '/imports/environment/enums';
 import { buildSystemEmail } from '/imports/utils/email';
 
-const { FROM_NAME, FROM_EMAIL, SUPPORT_EMAIL } = SETTING_PRIVATE;
-
-Accounts.emailTemplates.siteName = FROM_NAME;
-Accounts.emailTemplates.from = `${FROM_NAME}<${FROM_EMAIL}>`;
+Accounts.emailTemplates.siteName = "clientservicerecord";
+Accounts.emailTemplates.from = `clientservicerecord<noreply@clientservicerecord.co.uk>`;
 
 Accounts.emailTemplates.resetPassword = {
   subject(user) {
@@ -14,7 +11,7 @@ Accounts.emailTemplates.resetPassword = {
   },
   html(user, url) {
     return buildSystemEmail({
-      firstName: Meteor.users.masterProfile.findOne({userId: user._id}).name.first,
+      firstName: "noname",
       appUrl: Meteor.absoluteUrl(),
       messageTextLines: [
         `You have requested to reset your account's (${user.emails[0].address}) password.`,
@@ -22,7 +19,7 @@ Accounts.emailTemplates.resetPassword = {
       ],
       actionUrl: url.replace('#/reset-password', 'verify-password-reset'),
       actionText: 'Reset password',
-      supportEmail: SUPPORT_EMAIL,
+    supportEmail:"support@clientservicerecord.co.uk",
     });
   },
 };
@@ -33,14 +30,14 @@ Accounts.emailTemplates.verifyEmail = {
   },
   html(user, url) {
     return buildSystemEmail({
-      firstName: Meteor.users.masterProfile.findOne({userId: user._id}).name.first,
+      firstName: "noname",
       appUrl: Meteor.absoluteUrl(),
       messageTextLines: [
         'Click on the link below to verify your new kuafor account.'
       ],
       actionUrl: url.replace('#/verify-email', 'verify-email-address'),
       actionText: 'Verify account',
-      supportEmail: SUPPORT_EMAIL,
+      supportEmail:"support@clientservicerecord.co.uk",
     });
   },
 };

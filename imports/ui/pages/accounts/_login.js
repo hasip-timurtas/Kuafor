@@ -41,8 +41,6 @@ export class Login extends Component {
   }
 
   render () {
-    const { currentUser: { user } } = this.props
-    console.log(user)
     return (
       <div className="registrationLayout">
         <div id="page" className="no-pageAddons signin-page">
@@ -85,8 +83,4 @@ export class Login extends Component {
 
 }
 
-export default connect(
-  ({ globalData: { currentUser } }) => ({
-    currentUser
-  })
-)(Login)
+export default Login;

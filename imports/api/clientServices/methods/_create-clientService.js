@@ -1,9 +1,9 @@
 import { Meteor } from 'meteor/meteor'
 import { SimpleSchema } from 'meteor/aldeed:simple-schema'
 import { ValidatedMethod } from 'meteor/mdg:validated-method'
-import { Notes } from '/imports/api/notes/model'
+import { ClientServices } from '/imports/api/clientServices/model'
 
-export const noteSchema = new SimpleSchema({
+export const clientServiceSchema = new SimpleSchema({
   title: {
     type: String,
     max: 256
@@ -20,14 +20,14 @@ export const noteSchema = new SimpleSchema({
 })
 
 
-export const CreateNewNote = new ValidatedMethod({
+export const CreateNewClientService = new ValidatedMethod({
 
-  name: 'notes.CreateNewNote',
+  name: 'clientServices.CreateNewClientService',
 
-  validate: noteSchema.validator({ clean: true }),
+  validate: clientServiceSchema.validator({ clean: true }),
 
   run ({ title, content, ownerId }) {
-    return Notes.insert({
+    return ClientServices.insert({
       title,
       content,
       ownerId

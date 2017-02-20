@@ -5,34 +5,9 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema'
 import { AutoForm } from 'uniforms-unstyled'
 import { HiddenField, TextField, SubmitField } from '/imports/ui/_components/uniforms'
 import Alert from 'react-s-alert'
-import { AlreadyLoggedIn } from '/imports/ui/_layouts'
-
-/*
-import { signUpAndCreateUserAndBusinessSchema, signUpAndCreateUserAndBusiness } from '/imports/api/accounts/methods'
-import { checkDomainAvailability } from '/imports/api/businesses/methods'*/
+import { signUpAndCreateUserSchema, signUpAndCreateUser } from '/imports/api/accounts/methods'
 import { checkEmailAvailability } from '/imports/api/accounts/methods'
-
-export const userSignupSchema = new SimpleSchema({
-  password: {
-    type: String,
-    max: 256
-  },
-  name: {
-    type: Object
-  },
-  'name.first': {
-    type: String,
-    max: 256
-  },
-  'name.last': {
-    type: String,
-    max: 256
-  },
-  email: {
-    type: String,
-    regEx: SimpleSchema.RegEx.Email
-  }
-})
+import { AlreadyLoggedIn } from '/imports/ui/_layouts'
 
 export class Signup extends Component {
 
@@ -41,30 +16,39 @@ export class Signup extends Component {
     children: PropTypes.any
   }
 
-  // userSignupSchema = signUpAndCreateUserAndBusinessSchema
+  userSignupSchema = signUpAndCreateUserSchema
 
   handleSignup (doc) {
-    userSignupSchema.clean(doc)
+    this.userSignupSchema.clean(doc)
     const { email, password } = doc
-    checkEmailAvailability.call({ email }, (error, result) => {
-      if (error) {
-        Alert.error(`An unknown error occured, please try again later.`)
-        console.log(error);
-      } else if (result === 'OK') {
-        Meteor.loginWithPassword(email, password, (error) => {
+
+        checkEmailAvailability.call({ email }, (error, result) => {
           if (error) {
-            Alert.error(`Account is created, but could not sign-in, please sign in later.`)
+            Alert.error(`An unknown error occured, please try again later. checkEmailAvailability`)
+            console.log(error);
+          } else if (result === 'OK') {
+            signUpAndCreateUser.call(doc, (error, result) => {
+              if (error) {
+                Alert.error(`An unknown error occured, please try again later. signUpAndCreateUser`)
+                console.log(error);
+              } else if (result === 'OK') {
+                Meteor.loginWithPassword(email, password, (error) => {
+                  if (error) {
+                    console.log(error);
+                    Alert.error(`Account is created, but could not sign-in, please sign in later.`)
+                  }
+                  browserHistory.push('/')
+                })
+              }
+            })
+          } else if (!result) {
+            Alert.error(`An account with this email address already exists. Please try to sign-in instead.`)
           }
-          browserHistory.push('/')
         })
-      } else if (!result) {
-        Alert.error(`An account with this email address already exists. Please try to sign-in instead.`)
-      }
-    })
   }
 
   render () {
-    const { user } = this.props
+    const { user} = this.props
 
     return user
     ? <AlreadyLoggedIn/>
@@ -87,7 +71,7 @@ export class Signup extends Component {
             </div>
             <div className="form-wrapper">
               <div className="form-container">
-                <AutoForm className="form" schema={ userSignupSchema }
+                <AutoForm className="form" schema={ this.userSignupSchema }
                   onSubmit={ doc => this.handleSignup(doc) }>
                   <div className="form-header">
                     <h1>Youre so close to a more streamlined and organised workflow. <strong>Get Started FREE!</strong></h1>
@@ -101,6 +85,12 @@ export class Signup extends Component {
                   <TextField type="email" name="email" placeholder="Your email" />
                   <TextField type="password" name="password" placeholder="Create a new password" />
                   <SubmitField className="submit button button-primary">Get Started</SubmitField>
+                  <p className="tandc">
+                    By creating an account, you are agreeing to our{' '}
+                    <a href="https://kuafor.com/legal" className="link" target="_blank">
+                      <span>Terms of Service</span>
+                    </a>
+                  </p>
                 </AutoForm>
               </div>
             </div>

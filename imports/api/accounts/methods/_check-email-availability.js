@@ -1,6 +1,6 @@
-import { Meteor } from 'meteor/meteor';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
-import { ValidatedMethod } from 'meteor/mdg:validated-method';
+import { Meteor } from 'meteor/meteor'
+import { SimpleSchema } from 'meteor/aldeed:simple-schema'
+import { ValidatedMethod } from 'meteor/mdg:validated-method'
 
 export const checkEmailAvailability = new ValidatedMethod({
 
@@ -9,19 +9,20 @@ export const checkEmailAvailability = new ValidatedMethod({
   validate: new SimpleSchema({
     email: {
       type: String,
-      regEx: SimpleSchema.RegEx.Email,
+      regEx: SimpleSchema.RegEx.Email
     }
   }).validator(),
 
   run({email}) {
-    this.unblock();
+    this.unblock()
 
     if (Meteor.isServer) {
-      import { checkEmailAvailability } from './server';
-      return checkEmailAvailability(email) ? 'OK' : false;
+      console.log(email);
+      import { checkEmailAvailability } from './server'
+      return checkEmailAvailability(email) ? 'OK' : false
     }
 
-    return 'OK';
+    return 'OK'
 
   }
 

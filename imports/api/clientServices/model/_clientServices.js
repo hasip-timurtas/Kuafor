@@ -1,9 +1,9 @@
 import { Mongo } from 'meteor/mongo'
 import { SimpleSchema } from 'meteor/aldeed:simple-schema'
 
-export const Notes = new Mongo.Collection('notes')
+export const ClientServices = new Mongo.Collection('clientServices')
 
-Notes.Schema = new SimpleSchema({
+ClientServices.Schema = new SimpleSchema({
   title: {
     type: String,
     index: 1,
@@ -19,8 +19,15 @@ Notes.Schema = new SimpleSchema({
   ownerId: {
     type: String,
     index: 1,
-    optional: true,
-    regEx: SimpleSchema.RegEx.Id
+    regEx: SimpleSchema.RegEx.Id,
+    autoValue () {
+    if (this.isInsert) {
+      return this.userId
+    } else {
+      this.unset()
+    }
+  },
+  denyUpdate: true
   },
   createdAt: {
     type: Date,
@@ -34,4 +41,4 @@ Notes.Schema = new SimpleSchema({
   }
 })
 
-Notes.attachSchema(Notes.Schema)
+ClientServices.attachSchema(ClientServices.Schema)

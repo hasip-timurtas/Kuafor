@@ -18,8 +18,8 @@ import {
 } from '/imports/ui/_layouts'
 
 import {
-CreateNote, ListNotes
-} from '/imports/ui/pages/notes'
+CreateClientService, ListClientServices
+} from '/imports/ui/pages/clientServices'
 
 import { AlertOverride } from '/imports/ui/_components/generic'
 import { syncHistoryWithStore } from 'react-router-redux'
@@ -54,12 +54,12 @@ Meteor.startup(() => {
             <Route path="verify-password-reset/:token" component={ VerifyPasswordReset } />
             <Route path="verify-email-address/:token" component={ VerifyEmailAddress } />
 
-            <IndexRedirect to="notes" />
+            <IndexRedirect to="clientServices" />
             <Route component={ MainLayout }>
 
-              <Route path="notes" >
-                <IndexRoute component={ ListNotes } />
-                <Route path="create-note" component={ CreateNote } />
+              <Route path="clientServices" >
+                <IndexRoute component={ ListClientServices } />
+                <Route path="create-clientService" component={ CreateClientService } />
               </Route>
             </Route>
 

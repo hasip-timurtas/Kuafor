@@ -1,7 +1,5 @@
 import { Meteor } from 'meteor/meteor';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
-import { CONNECTION_STATUS } from "/imports/environment/enums/index";
-import _ from 'underscore';
 
 Meteor.users.schema = new SimpleSchema({
   createdAt: {
@@ -58,14 +56,12 @@ Meteor.users.schema = new SimpleSchema({
   },
   status: {
     type: String,
-    allowedValues: _.values(CONNECTION_STATUS),
     optional: true,
   },
   statusConnection: {
     type: String,
-    allowedValues: _.values(CONNECTION_STATUS),
     index: 1,
-    defaultValue: CONNECTION_STATUS.OFFLINE,
+    defaultValue:'offline'
   },
 });
 

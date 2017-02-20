@@ -17,6 +17,9 @@ standard-minifier-js@1.2.1    # JS minifier run for production mode
 es5-shim@4.6.15                # ECMAScript 5 compatibility for older browsers.
 ecmascript@0.6.1              # Enable ECMAScript2015+ syntax in app code
 
+konecty:user-presence
+random@1.0.10
+konecty:multiple-instances-status
 meteorhacks:unblock
 mdg:validated-method
 ultimatejs:tracker-react
