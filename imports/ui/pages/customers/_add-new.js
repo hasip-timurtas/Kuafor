@@ -22,7 +22,7 @@ class AddNew extends Component {
       if (error) {
         Alert.error(`Error during customer creation. Please try again later.`)
       } else if (result === 'OK') {
-        Alert.error(`Customer has been added successfully.`)
+        Alert.success('Customer has been added successfully.')
         this.props.closePortal()
       }
     })

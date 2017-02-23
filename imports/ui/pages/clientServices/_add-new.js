@@ -21,9 +21,10 @@ class AddNew extends Component {
 
     CreateNewClientService.call(doc, (error, result) => {
       if (error) {
-        Alert.error(`Error during Client Service creation. Please try again later.`)
+        Alert.error('Error during Client Service creation. Please try again later.')
       } else if (result === 'OK') {
-        Alert.error(`Client Service has been added successfully.`)
+        Alert.success('Client Service has been added successfully.')
+        this.props.closePortal()
       }
     })
   }

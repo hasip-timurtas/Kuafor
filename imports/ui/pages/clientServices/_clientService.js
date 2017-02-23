@@ -15,20 +15,6 @@ export class ClientService extends Component {
     user: PropTypes.object
   }
 
-  clientServiceSchemaa = clientServiceSchema
-
-  handleCreateClientService (doc) {
-    this.clientServiceSchemaa.clean(doc)
-
-    CreateNewClientService.call(doc, (error, result) => {
-      if (error) {
-        Alert.error(`Hatay verdi.`)
-      } else if (result === 'OK') {
-        Alert.error(`ClientService başarıyla kaydedildi`)
-      }
-    })
-  }
-
   handleRemoveClientService () {
     const { user, currentClientService: { _id }, currentClientService } = this.props
     deleteClientService.call({ _id }, (error) => {
