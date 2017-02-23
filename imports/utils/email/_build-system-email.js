@@ -258,8 +258,8 @@ export const buildSystemEmail = ({
                     v-text-anchor:middle;
                     width:169px;"
                                                                                         arcsize="10%"
-                                                                                        strokecolor="#4E42C3"
-                                                                                        fillcolor="#4E42C3">
+                                                                                        strokecolor="#88b1bf"
+                                                                                        fillcolor="#88b1bf">
                                                                                         <w:anchorlock/>
                                                                                         <center
                                                                                           style="color:#ffffff;
@@ -285,10 +285,10 @@ export const buildSystemEmail = ({
                                                                                                    cellpadding="0">
                                                                                                 <tbody>
                                                                                                 <tr style="vertical-align: top">
-                                                                                                    <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;border-radius: 5px;                   -webkit-border-radius: 5px;                   -moz-border-radius: 5px;                  color: #ffffff;                  background-color: #4E42C3;                  padding-top: 10px;                   padding-right: 25px;                  padding-bottom: 10px;                  padding-left: 25px;                  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;text-align: center"
+                                                                                                    <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;border-radius: 5px;                   -webkit-border-radius: 5px;                   -moz-border-radius: 5px;                  color: #ffffff;                  background-color: #88b1bf;                  padding-top: 10px;                   padding-right: 25px;                  padding-bottom: 10px;                  padding-left: 25px;                  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;text-align: center"
                                                                                                         valign="middle">
                                                                                                         <!--<![endif]-->
-                                                                                                        <a style="display: inline-block;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;background-color: #4E42C3;color: #ffffff"
+                                                                                                        <a style="display: inline-block;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;background-color: #88b1bf;color: #ffffff"
                                                                                                            href="${actionUrl}"
                                                                                                            target="_blank">
                                                                                                             <span style="font-size:16px;line-height:32px;"><span

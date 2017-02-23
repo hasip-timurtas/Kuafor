@@ -4,17 +4,75 @@ import { ValidatedMethod } from 'meteor/mdg:validated-method'
 import { ClientServices } from '/imports/api/clientServices/model'
 
 export const clientServiceSchema = new SimpleSchema({
-  title: {
+  customerId: {
+    type: String,
+    index: 1,
+    regEx: SimpleSchema.RegEx.Id,
+    denyUpdate: true
+  },
+  name: {
     type: String,
     max: 256
   },
-  content: {
+  texture: {
     type: String,
-    max: 1024
+    max: 256,
+    optional: true
   },
-  ownerId: {
+  condition: {
     type: String,
-    regEx: SimpleSchema.RegEx.Id,
+    max: 256,
+    optional: true
+  },
+  naturalForm: {
+    type: String,
+    max: 256,
+    optional: true
+  },
+  existingHairTreatment: {
+    type: String,
+    max: 256,
+    optional: true
+  },
+  naturalColor: {
+    type: Object
+  },
+  'naturalColor.level': {
+    type: String,
+    max: 256,
+    optional: true
+  },
+  'naturalColor.tone': {
+    type: String,
+    max: 256,
+    optional: true
+  },
+  amountOfGrey: {
+    type: Object,
+    optional: true
+  },
+  'amountOfGrey.front': {
+    type: String,
+    max: 256,
+    optional: true
+  },
+  'amountOfGrey.back': {
+    type: String,
+    max: 256,
+    optional: true
+  },
+  dateOfSkinTest: {
+    type: Object,
+    optional: true
+  },
+  'dateOfSkinTest.date': {
+    type: Date,
+    max: 256,
+    optional: true
+  },
+  'dateOfSkinTest.result': {
+    type: String,
+    max: 256,
     optional: true
   }
 })
@@ -26,11 +84,9 @@ export const CreateNewClientService = new ValidatedMethod({
 
   validate: clientServiceSchema.validator({ clean: true }),
 
-  run ({ title, content, ownerId }) {
+  run ({ ...clientService }) {
     return ClientServices.insert({
-      title,
-      content,
-      ownerId
+      ...clientService
     })
   }
 })

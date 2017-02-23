@@ -4,22 +4,24 @@ import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import classNames from 'classnames'
 
-class ListClientServiceItem extends Component {
+class ListCustomerItem extends Component {
   static propTypes = {
-    clientService: PropTypes.object.isRequired
+    customer: PropTypes.object.isRequired
   }
 
   render () {
-    const { clientService } = this.props
+    const { customer } = this.props
+    const clientFirstName = customer && customer.forename
+    const clientLastName = customer && customer.surname
     return (
       <div className={classNames('list-item')}>
-        <Link to={`/client-services/${clientService._id}`} className='list-item-cell link'>
-          <span className='supline'>texture</span>
-          <span className='list-title'>{clientService.texture}</span>
+        <Link to={`/customers/${customer._id}`} className='list-item-cell link'>
+          <span className='list-title'>{clientFirstName} {clientLastName}</span>
+          <span className='supline'>{customer.town}</span>
         </Link>
         <div className='list-item-cell'>
-          <span className='supline'>condition</span>
-          <p>{clientService.condition}</p>
+          <span className='supline'>country</span>
+          <p>{customer.town}</p>
         </div>
         <div className='list-item-cell max-width300px'>
           <span className='supline'>country</span>
@@ -34,4 +36,4 @@ export default connect(
   ({ globalData: { currentUser: { user } } }) => ({
     user
   })
-)(ListClientServiceItem)
+)(ListCustomerItem)

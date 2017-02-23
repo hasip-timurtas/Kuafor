@@ -17,7 +17,6 @@ export const checkEmailAvailability = new ValidatedMethod({
     this.unblock()
 
     if (Meteor.isServer) {
-      console.log(email);
       import { checkEmailAvailability } from './server'
       return checkEmailAvailability(email) ? 'OK' : false
     }

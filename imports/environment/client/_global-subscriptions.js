@@ -3,6 +3,7 @@ import { ReactiveVar } from 'meteor/reactive-var'
 import { Tracker } from 'meteor/tracker'
 import '/imports/api/accounts/model'
 import { ClientServices } from '/imports/api/clientServices/model'
+import { Customers } from '/imports/api/customers/model'
 import { store, setGlobalData } from '/imports/environment/ui-state'
 import moment from 'moment-timezone'
 import 'moment-round'
@@ -18,6 +19,8 @@ Meteor.startup(() => {
   const subscriptionHandles = []
   subscriptionHandles.push(Meteor.subscribe('global.clientServices'))
   subscriptionHandles.push(Meteor.subscribe('global.accounts.currentUserMasterProfile'))
+  subscriptionHandles.push(Meteor.subscribe('global.customers'))
+
 
   // TODO:  separate people to another store for optimum performance, also separate tracker autoruns for fine grained invalidation
   Tracker.autorun((computation) => {
@@ -31,7 +34,8 @@ Meteor.startup(() => {
           masterProfile: Meteor.users.masterProfile.findOne({ userId: currentUserId })
         },
         siteLoading: !!Meteor.loggingIn(),
-        clientServices: ClientServices.find({}, { sort: { createdAt: 0 } }).fetch()
+        clientServices: ClientServices.find({}, { sort: { createdAt: 0 } }).fetch(),
+        customers: Customers.find({ ownerId: currentUserId }).fetch()
       }
 
       store.dispatch(setGlobalData('SET_GLOBAL_DATA', data))

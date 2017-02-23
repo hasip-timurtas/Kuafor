@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor'
 import React, { Component, PropTypes } from 'react'
-import { Link } from 'react-router'
+import { Link, browserHistory } from 'react-router'
 import { connect } from 'react-redux'
 import { SimpleSchema } from 'meteor/aldeed:simple-schema'
 import { AutoForm } from 'uniforms-unstyled'
@@ -26,16 +26,13 @@ export class Login extends Component {
   })
 
   handleLogin (doc) {
-    console.log(doc)
     this.userLoginSchema.clean(doc)
     const { email, password } = doc
     Meteor.loginWithPassword(email, password, (error) => {
       if (error) {
         Alert.error(error.reason || error.message || error.details)
       } else {
-        // if(window.WebViewBridge) {
-        //   window.WebViewBridge.send(JSON.stringify({event: 'loggedIn', userId: Meteor.userId()}));
-        // }
+        browserHistory.push('/')
       }
     })
   }
@@ -48,7 +45,8 @@ export class Login extends Component {
             <div className="graphic-wrapper">
               <div className="graphic-container">
                 <div className="logo">
-                  <img alt="" src="/logo-symbol-inverted.png" />
+                  <strong>Manage</strong>
+                  <h1> Customer Service Records...</h1>
                 </div>
               </div>
             </div>
@@ -58,7 +56,7 @@ export class Login extends Component {
                   className="form"
                   schema={ this.userLoginSchema }
                   onSubmit={ doc => this.handleLogin(doc) }>
-                  <p>Dont have an account?
+                  <p>Don't have an account?
                       <Link to="/signup" className="link link-bold">
                         <span>Create one</span>
                       </Link>
@@ -83,4 +81,4 @@ export class Login extends Component {
 
 }
 
-export default Login;
+export default Login

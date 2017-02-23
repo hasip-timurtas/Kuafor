@@ -1,76 +1,67 @@
 import { Mongo } from 'meteor/mongo'
 import { SimpleSchema } from 'meteor/aldeed:simple-schema'
 
-export const ClientServices = new Mongo.Collection('clientServices')
+export const Customers = new Mongo.Collection('customers')
 
-ClientServices.Schema = new SimpleSchema({
-  customerId: {
+Customers.Schema = new SimpleSchema({
+  ownerId: {
     type: String,
     index: 1,
     regEx: SimpleSchema.RegEx.Id,
+    autoValue () {
+      if (this.isInsert) {
+        return this.userId
+      }
+      this.unset()
+    },
     denyUpdate: true
   },
-  name: {
-    type: String,
-    max: 256
-  },
-  texture: {
+  surname: {
     type: String,
     max: 256,
     optional: true
   },
-  condition: {
+  forename: {
     type: String,
     max: 256,
     optional: true
   },
-  naturalForm: {
+  birthdayDay: {
     type: String,
     max: 256,
     optional: true
   },
-  exitingHairTreatment: {
+  birthdayMonth: {
     type: String,
     max: 256,
     optional: true
   },
-  naturalColor: {
-    type: Object
-  },
-  'naturalColor.level': {
+  street: {
     type: String,
     max: 256,
     optional: true
   },
-  'naturalColor.tone': {
+  town: {
     type: String,
     max: 256,
     optional: true
   },
-  amountOfGrey: {
-    type: Object,
-    optional: true
-  },
-  'amountOfGrey.front': {
+  country: {
     type: String,
     max: 256,
     optional: true
   },
-  'amountOfGrey.back': {
+  postcode: {
     type: String,
     max: 256,
     optional: true
   },
-  dateOfSkinTest: {
-    type: Object,
-    optional: true
-  },
-  'dateOfSkinTest.test': {
+  telephoneHome: {
     type: String,
     max: 256,
     optional: true
   },
-  'dateOfSkinTest.result': {
+  work: {
     type: String,
     max: 256,
     optional: true
@@ -87,4 +78,4 @@ ClientServices.Schema = new SimpleSchema({
   }
 })
 
-ClientServices.attachSchema(ClientServices.Schema)
+Customers.attachSchema(Customers.Schema)

@@ -16,15 +16,10 @@ import {
   PageNotFound,
   MainLayout
 } from '/imports/ui/_layouts'
-
-import {
-CreateClientService, ListClientServices
-} from '/imports/ui/pages/clientServices'
-
 import { AlertOverride } from '/imports/ui/_components/generic'
 import { syncHistoryWithStore } from 'react-router-redux'
-
 import LayoutManager from './_layout-manager'
+
 import {
   Signup,
   ResetPassword,
@@ -32,6 +27,8 @@ import {
   VerifyEmailAddress,
   Login
 } from '/imports/ui/pages/accounts'
+import { ClientService, CreateClientService, ListClientServices } from '/imports/ui/pages/clientServices'
+import { Customer, CreateCustomer, ListCustomers } from '/imports/ui/pages/customers'
 
 
 // Create an enhanced history that syncs navigation events with the store
@@ -54,12 +51,19 @@ Meteor.startup(() => {
             <Route path="verify-password-reset/:token" component={ VerifyPasswordReset } />
             <Route path="verify-email-address/:token" component={ VerifyEmailAddress } />
 
-            <IndexRedirect to="clientServices" />
+            <IndexRedirect to="customers" />
             <Route component={ MainLayout }>
 
-              <Route path="clientServices" >
+              <Route path="client-services" >
                 <IndexRoute component={ ListClientServices } />
                 <Route path="create-clientService" component={ CreateClientService } />
+                <Route path=":clientServiceId" component={ ClientService } />
+              </Route>
+
+              <Route path="customers" >
+                <IndexRoute component={ ListCustomers } />
+                <Route path="create-customer" component={ CreateCustomer } />
+                <Route path=":customerId" component={ Customer } />
               </Route>
             </Route>
 

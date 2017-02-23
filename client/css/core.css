@@ -2,7 +2,7 @@
 /*MAIN STYLESHEET//////////////////////////////////////////////////////////////V
 
  * Colour Palette:
-	- Primary:   				#999999
+	- Primary:   				#88b1bf
 	^ Light shade:   		#584AD9
 	^ Lighter shade:   	#5D4EE6
 	^ Dark shade:       #473CB3
@@ -182,12 +182,10 @@ body {
 
   max-width: 100%;
   min-width: 350px;
-	overflow: hidden;
 
 	font-family: 'Lato', arial, sans-serif;
   font-size: 0.92em;
   line-height: 1.443;
-  text-align: center;
 
 	-webkit-text-size-adjust: none;
   -webkit-font-smoothing: antialiased;
@@ -1235,7 +1233,7 @@ textarea {
         }
         .Select-option.is-selected {
           color: #fff;
-          background-color: #999999;
+          background-color: #88b1bf;
         }
         .Select-option.is-disabled {
           color: #8B97AD;
@@ -1570,7 +1568,7 @@ textarea {
 
 		/*Checkbox check icon*/
 		.checkbox > span:after {
-			font-family: 'kuafor-icons-set';
+			font-family: 'plutio-icons-set';
 			content: "\E03E";
 		  color: #fff;
 		  width: auto;
@@ -1899,7 +1897,7 @@ textarea {
       content: '';
       display: inline-block;
       border-left: 7px solid transparent;
-      border-bottom: 7px solid #999999;
+      border-bottom: 7px solid #88b1bf;
       border-top-color: rgba(0, 0, 0, 0.2);
       position: absolute;
       bottom: 4px;
@@ -1922,7 +1920,7 @@ textarea {
     .rdtPicker td.rdtActive,
     .rdtPicker td.rdtActive:hover {
       color: #fff;
-      background-color: #999999;
+      background-color: #88b1bf;
     }
     .rdtPicker td.rdtActive.rdtToday:before {
       border-bottom-color: #fff;
@@ -2003,7 +2001,7 @@ textarea {
     cursor: pointer;
   }
   .rdtPicker thead tr:first-child th:hover {
-    color: #999999;
+    color: #88b1bf;
   }
 
   /*time picker*/
@@ -2053,7 +2051,7 @@ textarea {
         cursor: pointer;
       }
       .rdtCounter .rdtBtn:hover {
-        color: #999999;
+        color: #88b1bf;
         background: #fff;
       }
 
@@ -2211,7 +2209,7 @@ textarea {
 }
 
 .spinner:before {
-  content: 'Loading…';
+  content: 'Loadingâ€¦';
 }
 .spinner:not(:required):before {
   content: '';
@@ -2878,7 +2876,7 @@ textarea {
       /*overlay header*/
       .page-overlay-header {
         color: #fff;
-        background-color: #999999;
+        background-color: #88b1bf;
         width: 100%;
       }
 
@@ -3422,22 +3420,22 @@ textarea {
   /*Responsive settings*/
   @media screen and (min-width: 400px) {
     .popup .popup-content {
-      width: 330px;
+      width: 50%;
     }
   }
   @media screen and (min-width: 1200px) {
   .popup .popup-content	{
-  		width: 340px;
+  		width: 50%;
   	}
   }
   @media screen and (min-width: 1300px) {
   .popup .popup-content {
-    width: 380px;
+    width: 50%;
     }
   }
   @media screen and (min-width: 1500px) {
   .popup .popup-content {
-  		width: 430px;
+  		width: 50%;
   	}
   }
 
@@ -3590,6 +3588,15 @@ textarea {
   height: 80vh;
   pointer-events: auto;
 }
+
+.message-box-customer {
+  display: table;
+  width: 100%;
+  height: 50vh;
+  pointer-events: auto;
+}
+
+
 @media screen and (max-width: 600px) {
   .message-box {
     height: 100%;
@@ -3874,7 +3881,7 @@ to contain it with the .content area*/
 /*Label colours*/
 .label.label-primary {
 	color: #fff;
-	background-color: #999999;
+	background-color: #88b1bf;
 }
 .label.label-green {
 	color: #fff;
@@ -3924,7 +3931,7 @@ p .label {
 
   /*indicators colours*/
   .indicator-primary {
-    background: #999999;
+    background: #88b1bf;
   }
   .indicator-green {
     background: #4DBF39;
@@ -4036,7 +4043,7 @@ a, button, .button {
 /*Grey buttons*/
 .button-primary {
   color: #fff;
-  background-color: #999999;
+  background-color: #88b1bf;
 }
 .button-primary:hover {
 	background-color: #584AD9;
@@ -4407,7 +4414,7 @@ a, button, .button {
   		.hasDropdown .hasDropdown-menu li a.active,
   		.hasDropdown .hasDropdown-menu li a.active:hover {
   			color: #fff;
-  			background-color: #999999;
+  			background-color: #88b1bf;
   		}
 
   		/*Border-radius configuration*/
@@ -4445,7 +4452,7 @@ a, button, .button {
         .hasDropdown .hasDropdown-submenu li a.active,
         .hasDropdown .hasDropdown-submenu li a.active:hover {
           color: #fff;
-          background-color: #999999;
+          background-color: #88b1bf;
         }
 
       /*Sub-menus toggle icons*/
@@ -4454,7 +4461,7 @@ a, button, .button {
   			margin-bottom: 1px;
   		}
   		.hasDropdown .submenu-toggle:before {
-  			font-family: "kuafor-icons-set";
+  			font-family: "plutio-icons-set";
   			content: "\E025";
   			font-size: 0.65em;
   			position: absolute;
@@ -5312,7 +5319,7 @@ a, button, .button {
       /*profile initials*/
       #account-menu .profile-initials {
         color: #fff;
-        background-color: #999999;
+        background-color: #88b1bf;
         line-height: 2.35;
         font-weight: bold;
         font-size: 1.2em;
@@ -5639,12 +5646,12 @@ a, button, .button {
 		left: 0; bottom: 0;
 	}
 
-		#main-menu footer .kuafor-brand-link {
+		#main-menu footer .plutio-brand-link {
       width: 100%;
       height: 100%;
 		}
 
-      #main-menu footer .kuafor-brand-link .icon-kuafor-symbol-outlined {
+      #main-menu footer .plutio-brand-link .icon-plutio-symbol-outlined {
         color: #B3B9C7;
         font-size: 2.7em;
         line-height: 1.25;
@@ -5691,7 +5698,7 @@ a, button, .button {
 	/*Top Section*/
 	.topSection {
 		color: #fff;
-		background-color: #999999;
+		background-color: #88b1bf;
 		position: relative;
 		z-index: 3;
 	}
@@ -5815,7 +5822,7 @@ a, button, .button {
   			}
   			.topSection .menu a.active,
   			.topSection .menu a.active:hover {
-  				color: #999999;
+  				color: #88b1bf;
   				background-color: #EDF3F7;
   				opacity: 1;
   			}
@@ -5823,13 +5830,13 @@ a, button, .button {
   				/*Labels and notifications*/
   				.topSection .menu a .label,
   				.topSection .menu a:hover .label {
-  					color: #999999;
+  					color: #88b1bf;
   					background-color: #fff;
   				}
   				.topSection .menu a.active .label,
   				.topSection .menu a.active:hover .label {
   					color: #fff;
-  					background-color: #999999;
+  					background-color: #88b1bf;
   				}
 
           /*Back button indicators*/
@@ -6039,7 +6046,7 @@ a, button, .button {
         /*show category toggle icons on hover*/
         #sidebar-tasks .sidebar-tasks-list .tasks-category-title p:after {
           content: "\E025";
-          font-family: "kuafor-icons-set";
+          font-family: "plutio-icons-set";
           font-size: 0.65em;
           padding: 5px 5px 5px 8px;
           position: absolute;
@@ -6184,7 +6191,7 @@ a, button, .button {
         /*show category toggle icons on hover*/
         #sidebar-conversations .conversations-container .conversations-category .conversations-category-title p:after {
           content: "\E025";
-          font-family: "kuafor-icons-set";
+          font-family: "plutio-icons-set";
           font-size: 0.65em;
           padding-left: 8px;
           position: absolute;
@@ -6472,24 +6479,24 @@ a, button, .button {
 
 
 /*============================================================================*/
-/*Sidebar clientServices*/
-#sidebar-clientServices {
+/*Sidebar notes*/
+#sidebar-notes {
   height: 100%;
 }
 
 
   /*Add new tassk section*/
-  #sidebar-clientServices .add-new-clientService {
+  #sidebar-notes .add-new-note {
     border-bottom: 1px solid #E6ECF0;
   }
 
-    #sidebar-clientServices .add-new-clientService input {
+    #sidebar-notes .add-new-note input {
       background-color: #fff;
       border: none !important;
       min-height: auto;
       padding: 0 0 13px 26px;
     }
-    #sidebar-clientServices .add-new-clientService .inner-icon {
+    #sidebar-notes .add-new-note .inner-icon {
       top: -1px;
       left: -1px;
       width: 20px;
@@ -6498,7 +6505,7 @@ a, button, .button {
 
 
   /*tasks lists container*/
-  #sidebar-clientServices .sidebar-clientServices-list {
+  #sidebar-notes .sidebar-notes-list {
     height: -moz-calc(100% - 55px);
     height: -webkit-calc(100% - 55px);
     height: -o-calc(100% - 55px);
@@ -6507,7 +6514,7 @@ a, button, .button {
     margin-top: 15px;
   }
 
-    #sidebar-clientServices .sidebar-clientServices-list .clientService-section {
+    #sidebar-notes .sidebar-notes-list .note-section {
       border-radius: 5px;
       border: 1px solid #fff;
       padding: 6px 8px;
@@ -6516,17 +6523,17 @@ a, button, .button {
       -webkit-transition: all .1s linear;
       transition: all .1s linear;
     }
-    #sidebar-clientServices .sidebar-clientServices-list .clientService-section:hover {
+    #sidebar-notes .sidebar-notes-list .note-section:hover {
       border: 1px solid #E6ECF0;
     }
 
-      #sidebar-clientServices .sidebar-clientServices-list .clientService-section .clientService-indicators {
+      #sidebar-notes .sidebar-notes-list .note-section .note-indicators {
         color: #8B97AD;
         font-size: 0.85em;
         font-weight: normal;
       }
 
-      #sidebar-clientServices .sidebar-clientServices-list .clientService-section * {
+      #sidebar-notes .sidebar-notes-list .note-section * {
         cursor: pointer;
         overflow: hidden;
         white-space: nowrap;
@@ -6539,14 +6546,14 @@ a, button, .button {
         user-select: none;
       }
 
-      #sidebar-clientServices .sidebar-clientServices-list .clientService-section .clientService-section-title {
+      #sidebar-notes .sidebar-notes-list .note-section .note-section-title {
 
       }
 
 
   /*--------------------------------------------------------------------------*/
-  /*clientService section window*/
-  #sidebar-clientServices .clientService-window {
+  /*note section window*/
+  #sidebar-notes .note-window {
     background-color: #fff;
     height: 100%; width: 100%;
     position: relative;;
@@ -6554,31 +6561,31 @@ a, button, .button {
     transition: all 0.1s linear;
   }
 
-    /*clientService head*/
-    #sidebar-clientServices .clientService-window .window-head {
+    /*note head*/
+    #sidebar-notes .note-window .window-head {
       border-bottom: 1px solid #E6ECF0;
       margin-bottom: 10px;
     }
 
       /*Header*/
-      #sidebar-clientServices .clientService-window .window-header {
+      #sidebar-notes .note-window .window-header {
         display: table;
         width: 100%;
         padding-bottom: 15px;
       }
 
-        #sidebar-clientServices .clientService-window .window-header > * {
+        #sidebar-notes .note-window .window-header > * {
           display: table-cell;
           vertical-align: middle;
         }
 
-        /*clientService section name*/
-        #sidebar-clientServices .clientService-window .window-header .clientService-name {
+        /*note section name*/
+        #sidebar-notes .note-window .window-header .note-name {
 
         }
 
-          /*clientService edtiable name*/
-          #sidebar-clientServices .clientService-window .window-header .clientService-name input {
+          /*note edtiable name*/
+          #sidebar-notes .note-window .window-header .note-name input {
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
@@ -6590,8 +6597,8 @@ a, button, .button {
             background-color: #fff;
           }
 
-        /*clientService section delete button*/
-        #sidebar-clientServices .clientService-window .window-header .clientService-section-delete-button {
+        /*note section delete button*/
+        #sidebar-notes .note-window .window-header .note-section-delete-button {
           display: table-cell;
           vertical-align: middle;
           padding-left: 10px;
@@ -6599,16 +6606,16 @@ a, button, .button {
         }
 
 
-      /*clientService body / textarea*/
-      #sidebar-clientServices .clientService-window .clientService-body {
+      /*note body / textarea*/
+      #sidebar-notes .note-window .note-body {
 
       }
 
-        #sidebar-clientServices .clientService-window .clientService-input {
+        #sidebar-notes .note-window .note-input {
 
         }
 
-        #sidebar-clientServices .clientService-window .clientService-input textarea {
+        #sidebar-notes .note-window .note-input textarea {
           color: inherit !important;
           background-color: #fff !important;
           padding: 0;
@@ -6734,7 +6741,7 @@ a, button, .button {
   }
   #mobile-menu a.active,
   #mobile-menu a.active:hover {
-    color: #999999;
+    color: #88b1bf;
     background-color: #EDF3F7;
   }
 
@@ -7271,49 +7278,49 @@ a, button, .button {
 
 
 /*============================================================================*/
-/*ClientService Sections*/
-.clientService-section {
+/*Note Sections*/
+.note-section {
 
 }
 
-  .clientService-section .section-body-block {
+  .note-section .section-body-block {
     background-color: transparent;
     padding: 0;
   }
 
-    .clientService-section .clientServices-container {
+    .note-section .notes-container {
       max-height: 300px;
       overflow-y: auto;
     }
 
-      .clientService-section .clientService-entry {
+      .note-section .note-entry {
         background-color: #FFFCE8;
         border-bottom: 1px dashed #E3DEBA;
         border-radius: 5px;
         padding: 20px;
       }
-      .clientService-section .clientService-entry:last-of-type {
+      .note-section .note-entry:last-of-type {
         margin-bottom: 0;
         border-bottom: none;
       }
 
-        .clientService-section .clientService-entry .clientService-author {
+        .note-section .note-entry .note-author {
           opacity: 0.6;
           font-size: 0.9em;
         }
 
-        .clientService-section .clientService-entry .clientService-content {
+        .note-section .note-entry .note-content {
 
         }
 
-        .clientService-section .clientService-entry textarea {
+        .note-section .note-entry textarea {
           background-color: transparent;
           border: none;
           padding: 0;
           overflow: hidden;
         }
-        .clientService-section .clientService-entry textarea:hover,
-        .clientService-section .clientService-entry textarea:focus {
+        .note-section .note-entry textarea:hover,
+        .note-section .note-entry textarea:focus {
           color: inherit;
         }
 
@@ -7379,7 +7386,7 @@ a, button, .button {
     height: 100%;
     display: table-cell;
     vertical-align: middle;
-    background-color: #999999;
+    background-color: #88b1bf;
     position: relative;
     text-align: left;
   }
@@ -7396,7 +7403,7 @@ a, button, .button {
       }
       .main-signup-page .graphic-wrapper .logo:after {
         content: "";
-        background-color: #999999;
+        background-color: #88b1bf;
         border-radius: 200px;
         padding: 110px;
         width: 1%;
@@ -7427,6 +7434,7 @@ a, button, .button {
         overflow: hidden;
       }
       .main-signup-page .graphic-wrapper .testimonial-section:after {
+        background-image: url('https://plutio.com/app/assets/singup/signup-testimonial-strip-cover.png');
         content: "";
         position: absolute;
         top: 0; bottom: 0;
@@ -7444,6 +7452,7 @@ a, button, .button {
       }
       .main-signup-page .graphic-wrapper .testimonial-cover {
         content: "";
+        background-image: url('https://plutio.com/assets/images/testimonials/matthew-beasley.jpg');
         background-attachment: scroll;
         background-repeat: no-repeat;
         background-position: center center;
@@ -7476,6 +7485,7 @@ a, button, .button {
         }
         .main-signup-page .graphic-wrapper .testimonial-text:before {
           content: "";
+          background-image: url('https://plutio.com/assets/images/testimonials/matthew-beasley.jpg');
           background-attachment: scroll;
           background-repeat: no-repeat;
           background-position: center center;
@@ -7547,7 +7557,7 @@ a, button, .button {
   height: 150px;
   width: 100%;
   display: table;
-  background-color: #999999;
+  background-color: #88b1bf;
   text-align: center;
 }
 
@@ -7646,7 +7656,7 @@ a, button, .button {
       height: 100%;
       display: table-cell;
       vertical-align: middle;
-      background-color: #999999;
+      background-color: #88b1bf;
       position: relative;
       text-align: left;
     }
@@ -7696,7 +7706,7 @@ a, button, .button {
       height: 150px;
       width: 100%;
       display: table;
-      background-color: #999999;
+      background-color: #88b1bf;
       text-align: center;
     }
 
@@ -7878,7 +7888,7 @@ a, button, .button {
     height: 100%;
     display: table-cell;
     vertical-align: middle;
-    background-color: #999999;
+    background-color: #88b1bf;
     position: relative;
     text-align: left;
   }
@@ -7894,7 +7904,7 @@ a, button, .button {
       .signin-page .graphic-wrapper .graphic-container .logo {
         display: table-cell;
         vertical-align: middle;
-        width: 220px;
+        width: 200px;
       }
 
 /*responsive styling*/
@@ -7932,7 +7942,7 @@ a, button, .button {
       height: 150px;
       width: 100%;
       display: table;
-      background-color: #999999;
+      background-color: #88b1bf;
       text-align: center;
     }
 
@@ -8115,7 +8125,7 @@ a, button, .button {
     height: 100%;
     display: table-cell;
     vertical-align: middle;
-    background-color: #999999;
+    background-color: #88b1bf;
     position: relative;
     text-align: left;
   }
@@ -8165,7 +8175,7 @@ a, button, .button {
     height: 150px;
     width: 100%;
     display: table;
-    background-color: #999999;
+    background-color: #88b1bf;
     text-align: center;
   }
 
@@ -8273,7 +8283,7 @@ a, button, .button {
       height: 100%;
       display: table-cell;
       vertical-align: middle;
-      background-color: #999999;
+      background-color: #88b1bf;
       position: relative;
       text-align: left;
     }
@@ -8322,7 +8332,7 @@ a, button, .button {
     height: 150px;
     width: 100%;
     display: table;
-    background-color: #999999;
+    background-color: #88b1bf;
     text-align: center;
   }
 
@@ -8407,7 +8417,7 @@ a, button, .button {
     height: 100%;
     display: table-cell;
     vertical-align: middle;
-    background-color: #999999;
+    background-color: #88b1bf;
     position: relative;
     text-align: left;
   }
@@ -8456,7 +8466,7 @@ a, button, .button {
     height: 150px;
     width: 100%;
     display: table;
-    background-color: #999999;
+    background-color: #88b1bf;
     text-align: center;
   }
 
@@ -8540,7 +8550,7 @@ a, button, .button {
       height: 100%;
       display: table-cell;
       vertical-align: middle;
-      background-color: #999999;
+      background-color: #88b1bf;
       position: relative;
       text-align: left;
     }
@@ -8589,7 +8599,7 @@ a, button, .button {
     height: 150px;
     width: 100%;
     display: table;
-    background-color: #999999;
+    background-color: #88b1bf;
     text-align: center;
   }
 
@@ -8984,7 +8994,7 @@ form .project-status-box {
     	}
       .project-tasks .project-tasks-utilities-section .project-tasks-view-triggers a.active,
       .project-tasks .project-tasks-utilities-section .project-tasks-view-triggers a.active:hover {
-        color: #999999;
+        color: #88b1bf;
         pointer-events: none;
     	}
 
@@ -9182,7 +9192,7 @@ form .project-status-box {
             /*show category toggle icons on hover*/
             .project-tasks .tasks-group-body .tasks-category .tasks-category-title p:after {
               content: "\E025";
-              font-family: "kuafor-icons-set";
+              font-family: "plutio-icons-set";
               font-size: 0.65em;
               padding: 5px 5px 5px 8px;
               position: absolute;
@@ -10738,7 +10748,7 @@ i, .icon {
 [class*=" icon-"]:before,
 [data-icon]:before {
 	font-size: 1.137em;
-  font-family: "kuafor-icons-set" !important;
+  font-family: "plutio-icons-set" !important;
   font-style: normal !important;
   font-weight: normal !important;
   font-variant: normal !important;
@@ -10851,7 +10861,7 @@ i, .icon {
   /*onboarding intro*/
   #onboarding-canvas .onboarding-intro {
     color: #fff;
-    background-color: #999999;
+    background-color: #88b1bf;
     display: table;
     vertical-align: middle;
     position: fixed;
@@ -11100,7 +11110,7 @@ i, .icon {
         }
 
           #onboarding-canvas .onboarding-card-content .card-title span {
-            color: #999999;
+            color: #88b1bf;
             font-weight: bold;
           }
 
@@ -11139,7 +11149,7 @@ i, .icon {
         }
 
         #onboarding-canvas .onboarding-card-features li i {
-          color: #999999;
+          color: #88b1bf;
           font-size: 1.2em;
         }
 

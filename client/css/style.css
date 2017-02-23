@@ -25,6 +25,19 @@
     right: 10px;
 }
 
+.Add-New-Area .row{
+  margin-bottom:5px;
+  padding:0px 10px 0px 10px
+}
+
+.addnewclientrecord{
+  padding: 20px;
+}
+
+.client-service-detail .fieldset-stripped{
+  padding: 8px;
+}
+
 @media only screen and (max-width: 480px) {
     body {
         background-color: lightblue;

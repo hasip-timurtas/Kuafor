@@ -2,8 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 
 
-export const MainMenu = () => {
-  return (
+export const MainMenu = () => (
     <nav className="navbar navbar-default">
                   <div className="container-fluid">
                       <div className="navbar-header">
@@ -14,26 +13,11 @@ export const MainMenu = () => {
                               <span className="icon-bar"></span>
                               <span className="icon-bar"></span>
                           </button>
-                          <Link className="navbar-brand" to="/">MHT ClientService</Link>
+                          <Link className="navbar-brand" to="/">MHT Client Service</Link>
                       </div>
-                      <div id="navbar" className="navbar-collapse collapse">
-                          <ul className="nav navbar-nav">
-                              <li><Link to="/clientServices/create-clientService">New ClientService</Link></li>
-                          </ul>
-                      </div>
+
                   </div>
               </nav>
     )
-}
 
 export default MainMenu
-/*
-export default connect(
-  ({
-    globalData: {
-      userRoleInCurrentBusiness
-    }
-  }) => ({
-    userRoleInCurrentBusiness
-  }), null, null, { pure: false }
-)(MainMenu)*/
