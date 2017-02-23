@@ -13,9 +13,21 @@ export const MainMenu = () => (
                               <span className="icon-bar"></span>
                               <span className="icon-bar"></span>
                           </button>
-                          <Link className="navbar-brand" to="/">MHT Client Service</Link>
+                          <Link className="navbar-brand" to="/">
+                            <img className="block" src="/logo.png"/>
+                          </Link>
                       </div>
-
+                      <ul className="nav navbar-nav navbar-right">
+                        <li>
+                          <a className="link link-red link-logout"
+                          onClick={ (e) => {
+                            e.preventDefault()
+                            Meteor.logout()
+                          }}>
+                          <span>Logout</span>
+                          </a>
+                        </li>
+                      </ul>
                   </div>
               </nav>
     )

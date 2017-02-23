@@ -5,7 +5,7 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema'
 import { AutoForm } from 'uniforms-unstyled'
 import { HiddenField, TextField, SubmitField, ReactSelectField, DateTimePickerField } from '/imports/ui/_components/uniforms'
 import Alert from 'react-s-alert'
-import { CreateNewClientService, clientServiceSchema } from '/imports/api/clientServices/methods'
+import { CreateNewClientService, clientServiceSchema, deleteClientService } from '/imports/api/clientServices/methods'
 import Portal from 'react-portal'
 import { DeleteRecord } from '/imports/ui/_components/generic'
 
@@ -29,7 +29,7 @@ export class ClientService extends Component {
     })
   }
 
-  handleRemove () {
+  handleRemoveClientService () {
     const { user, currentClientService: { _id }, currentClientService } = this.props
     deleteClientService.call({ _id }, (error) => {
       if (error) {
@@ -57,20 +57,25 @@ export class ClientService extends Component {
       dateOfSkinTest }
     } = this.props
 
-
-    console.log(currentClientService)
     const optionsDeleteRecord = {
-      handleDelete: ::this.handleRemove,
+      handleDelete: ::this.handleRemoveClientService,
       description: 'This client service record will be permanently deleted.',
       strongArea: `Are you sure you want to delete ${name}`
     }
 
     return (
       <div className='section'>
+      <a className="back-button" onClick={browserHistory.goBack} ><span> <i className="icon-chevron-left"> </i> Back</span></a>
         <h1> Client Service Record </h1>
         <div className='section-body'>
           <div className='section-body-block content client-service-detail'>
             <div className='blocks-section selectable-text'>
+            {name && (
+              <div className='fieldset-stripped'>
+                  <span className='supline none-clickable'>name</span>
+                  {name}
+              </div>
+            )}
               {texture && (
                 <div className='fieldset-stripped'>
                     <span className='supline none-clickable'>Texture</span>

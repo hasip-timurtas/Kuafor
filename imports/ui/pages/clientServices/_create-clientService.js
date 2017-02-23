@@ -101,6 +101,7 @@ export class CreateClientService extends Component {
 
     return (
       <div className="new-clientService-area">
+      <a className="back-button" onClick={browserHistory.goBack} ><span> <i className="icon-chevron-left"> </i> Back</span></a>
             <h1> Client Service Record </h1>
             <AutoForm className="new-clientService" schema={ this.clientServiceSchemaa } onSubmit={ doc => this.handleCreateClientService(doc) }>
               <div className="row">

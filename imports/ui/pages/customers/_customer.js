@@ -59,50 +59,92 @@ export class Customer extends Component {
       strongArea: `Are you sure you want to delete ${currentCustomer.forename}`
     }
 
+
+    const {
+        surname,
+        forename,
+        birthdayDay,
+        birthdayMonth,
+        street,
+        town,
+        country,
+        postcode,
+        telephoneHome,
+        work
+      } = currentCustomer
+
     return (
-      <div className="new-clientService-area">
-            <h1> Customer Information</h1>
-            <AutoForm className="new-clientService" schema={ this.customerSchemaa } onSubmit={ doc => this.handleCreateCustomer(doc) }>
-              <div className="row">
-                <div className="col-md-3">
-                  <TextField name="surname" textPrefix="Surname" value={currentCustomer.surname} />
-                </div>
-                <div className="col-md-3">
-                  <TextField name="forename" textPrefix="Forename" value={currentCustomer.forename} />
-                </div>
-                <div className="col-md-3">
-                  <TextField name="birthdayDay" textPrefix="Birthday Day" value={currentCustomer.birthdayDay} />
-                </div>
-                <div className="col-md-3">
-                  <TextField name="birthdayMonth" textPrefix="Month" value={currentCustomer.birthdayMonth} />
-                </div>
+      <div className='section'>
+          <a className="back-button" onClick={browserHistory.goBack} ><span> <i className="icon-chevron-left"> </i> Back</span></a>
+                <h1> Customer </h1>
+                <div className='section-body'>
+                  <div className='section-body-block content client-service-detail'>
+                    <div className='blocks-section selectable-text'>
+                      {surname && (
+                        <div className='fieldset-stripped'>
+                            <span className='supline none-clickable'>Surname</span>
+                            {surname}
+                        </div>
+                      )}
+                      {forename && (
+                        <div className='fieldset-stripped'>
+                            <span className='supline none-clickable'>Forename</span>
+                            {forename}
+                        </div>
+                      )}
+                      {birthdayDay && birthdayMonth && (
+                        <div className='fieldset-stripped'>
+                            <p className="font-blue">birthday</p>
+                            <span className='supline none-clickable'>Day</span>
+                            {birthdayDay}
+                            <span className='supline none-clickable'>Month</span>
+                            {birthdayMonth}
+                        </div>
+                      )}
+                      {street && (
+                        <div className='fieldset-stripped'>
+                            <span className='supline none-clickable'>Street</span>
+                            {street}
+                        </div>
+                      )}
+                      {town && (
+                        <div className='fieldset-stripped'>
+                            <span className='supline none-clickable'>Town</span>
+                            {town}
+                        </div>
+                      )}
+                      {country && (
+                        <div className='fieldset-stripped'>
+                            <span className='supline none-clickable'>Country</span>
+                            {country}
+                        </div>
+                      )}
+                      {postcode && (
+                        <div className='fieldset-stripped'>
+                            <span className='supline none-clickable'>Post Code</span>
+                            {postcode}
+                        </div>
+                      )}
+                      {telephoneHome && (
+                        <div className='fieldset-stripped'>
+                            <span className='supline none-clickable'>TelephoneHome</span>
+                            {telephoneHome}
+                        </div>
+                      )}
+                      {work && (
+                        <div className='fieldset-stripped'>
+                            <span className='supline none-clickable'>Work</span>
+                            {work}
+                        </div>
+                      )}
+                      <div className='fieldset-stripped'>
+                        <Portal head='Create new customer' closeOnEsc openByClickOn={<a className='button button-faint button-red'>Delete Record</a>}>
+                                <DeleteRecord {...optionsDeleteRecord} />
+                        </Portal>
+                      </div>
+                    </div>
+                  </div>
               </div>
-              <div className="row">
-                <div className="col-md-12">
-                  <TextField name="street" textPrefix="Street" value={currentCustomer.street} />
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-md-3">
-                  <TextField name="town" textPrefix="Town" value={currentCustomer.town} />
-                </div>
-                <div className="col-md-3">
-                  <TextField name="country" textPrefix="Country" value={currentCustomer.country} />
-                </div>
-                <div className="col-md-3">
-                  <TextField name="postcode" textPrefix="Post Code" value={currentCustomer.postcode} />
-                </div>
-                <div className="col-md-3">
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-md-3">
-                    <Portal head='Create new customer' closeOnEsc openByClickOn={<a className='button button-faint button-red'>Delete Customer</a>}>
-                          <DeleteRecord {...optionsDeleteRecord} />
-                    </Portal>
-                </div>
-              </div>
-            </AutoForm>
             {thereAreNoClientServices ? (
               <div className="message-box message-box-customer">
                 <div className="message-box-wrapper">

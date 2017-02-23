@@ -20,9 +20,9 @@ class AddNew extends Component {
 
     CreateNewCustomer.call(doc, (error, result) => {
       if (error) {
-        Alert.error(`Hatay verdi.`)
+        Alert.error(`Error during customer creation. Please try again later.`)
       } else if (result === 'OK') {
-        Alert.success('Customer created successfully.')
+        Alert.error(`Customer has been added successfully.`)
         this.props.closePortal()
       }
     })
@@ -60,6 +60,10 @@ class AddNew extends Component {
                   <TextField name="postcode" textPrefix="Post Code" />
                 </div>
                 <div className="row">
+                  <TextField name="telephoneHome" textPrefix="Telephone" />
+                </div>
+                <div className="row">
+                  <TextField name="work" textPrefix="Work" />
                 </div>
             </div>
             <div className='popup-body-block content'>

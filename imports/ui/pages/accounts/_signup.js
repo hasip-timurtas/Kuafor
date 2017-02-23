@@ -55,6 +55,7 @@ export class Signup extends Component {
             <div className="graphic-wrapper">
               <div className="graphic-container">
                 <div className="logo">
+                  <img alt="" src="/logo.png" />
                 </div>
               </div>
             </div>

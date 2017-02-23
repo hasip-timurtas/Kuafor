@@ -21,9 +21,9 @@ class AddNew extends Component {
 
     CreateNewClientService.call(doc, (error, result) => {
       if (error) {
-        Alert.error(`Hatay verdi.`)
+        Alert.error(`Error during Client Service creation. Please try again later.`)
       } else if (result === 'OK') {
-        Alert.error(`ClientService başarıyla kaydedildi`)
+        Alert.error(`Client Service has been added successfully.`)
       }
     })
   }

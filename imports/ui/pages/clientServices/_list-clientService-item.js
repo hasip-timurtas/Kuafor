@@ -14,16 +14,16 @@ class ListClientServiceItem extends Component {
     return (
       <div className={classNames('list-item')}>
         <Link to={`/client-services/${clientService._id}`} className='list-item-cell link'>
-          <span className='supline'>texture</span>
-          <span className='list-title'>{clientService.texture}</span>
+          <span className='supline'>Name</span>
+          <span className='list-title'>{clientService.name}</span>
         </Link>
         <div className='list-item-cell'>
-          <span className='supline'>condition</span>
-          <p>{clientService.condition}</p>
+          <span className='supline'>texture</span>
+          <p>{clientService.texture}</p>
         </div>
         <div className='list-item-cell max-width300px'>
-          <span className='supline'>country</span>
-          1
+        <span className='supline'>condition</span>
+        <p>{clientService.condition}</p>
         </div>
       </div>
     )

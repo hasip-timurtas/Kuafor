@@ -25,7 +25,7 @@ class ListCustomerItem extends Component {
         </div>
         <div className='list-item-cell max-width300px'>
           <span className='supline'>country</span>
-          1
+          <p>{customer.country}</p>
         </div>
       </div>
     )

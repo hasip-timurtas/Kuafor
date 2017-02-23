@@ -35,7 +35,8 @@ ClientServices.Schema = new SimpleSchema({
     optional: true
   },
   naturalColor: {
-    type: Object
+    type: Object,
+    optional: true
   },
   'naturalColor.level': {
     type: String,
